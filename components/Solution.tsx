@@ -102,8 +102,7 @@ const Solution: React.FC = () => {
                     </div>
                     <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-tevel-green transition-colors">Dynamic Context Matching (הייחוד שלנו)</h3>
                     <p className="text-slate-400 text-lg max-w-lg leading-relaxed">
-                        מנגנון קנייני המריץ "ניקוד היפותזות" בזמן אמת. המנוע מקצה לכל פיסת מידע חדשה ציון רלוונטיות ומחליט באופן אוטונומי: האם זה פותר חור בנרטיב, מחזק תיאוריה קיימת, או פותח אירוע חדש.
-                    </p>
+                    כל פיסת מידע מנותחת בהקשר רחב, והמערכת קובעת באופן אוטונומי אם היא משלימה את ההבנה, מחזקת פרשנות קיימת או מייצרת מסלול חקירה חדש.                    </p>
                 </div>
                 
                 {/* Data Flow Visualization */}
@@ -144,8 +143,7 @@ const Solution: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">נורמליזציה אוניברסלית</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
-                      שימוש ב-LLMs ובמודליות סמנטית לעיבוד אוטומטי של נתונים הטרוגניים (Time-Series, טקסט לא מובנה, וידאו, לוגים) והפיכתם לסכמת ישויות וקשרים אחידה.
-                  </p>
+                  המערכת מאחדת נתונים מפוזרים — טקסט, לוגים, מדידות וידאו — לכדי מודל אחד שמדבר באותה שפה, כך שניתן סוף-סוף לראות את התמונה המלאה.                  </p>
               </div>
           </motion.div>
 

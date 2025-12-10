@@ -1,15 +1,37 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Crosshair, Database, FileText, ArrowLeftRight, Rocket, Zap, Power } from 'lucide-react';
+import { Crosshair, Database, FileSearch,  Rocket, Zap, Power, AlertTriangle } from 'lucide-react';
 
 const steps = [
-  { icon: Crosshair, text: "הגדרת אתגר RCA", sub: "Define Root Cause Analysis Challenge" },
-  { icon: Database, text: "אינטגרציית דאטה", sub: "Ingest Logs & History" },
-  { icon: FileText, text: "בניית נרטיב אוטומטית", sub: "Automated Narrative Building" },
-  { icon: ArrowLeftRight, text: "מדידת חיסכון", sub: "Cycle Time Reduction" },
-  { icon: Rocket, text: "הטמעה והרחבה", sub: "Scale to Production" }
-];
+    {
+      icon: Crosshair,
+      text: "בחירת מוקד בעייתי",
+      sub: "Select a focused operational issue to maximize impact"
+    },
+    {
+      icon: Database,
+      text: "חיבור והזרמת נתונים",
+      sub: "Connect relevant data sources and unify scattered information"
+    },
+    {
+      icon: FileSearch,
+      text: "בנית תמונת־קשר",
+      sub: "Reveal hidden links and create a clear operational picture"
+    },
+    {
+      icon: AlertTriangle,
+      text: "זיהוי פערי מידע",
+      sub: "Highlight missing pieces and show what’s needed for full clarity"
+    },
+    {
+      icon: Rocket,
+      text: "תובנות והטמעה",
+      sub: "Deliver actionable insights and map the path to deployment"
+    }
+  ];
+  
+  
 
 const PocPlan: React.FC = () => {
   const handleContact = () => {

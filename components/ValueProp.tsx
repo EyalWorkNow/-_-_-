@@ -5,30 +5,31 @@ import { Target, Users, Network, ShieldCheck, ArrowLeft, TrendingUp } from 'luci
 
 const values = [
   { 
-      title: "יצירת קטגוריה חדשה", 
-      text: "TEVEL ממלאת ואקום קריטי בשוק המודיעין המבצעי והחקירתי, ויוצרת למעשה קטגוריית מוצר חדשה שמשלימה את הכלים הקיימים בשכבה הקוגניטיבית.", 
-      icon: Target, 
-      id: "CATEGORY_CREATION" 
+    title: "יצירת קטגוריה חדשה",
+    text: "TEVEL מוסיפה יכולת שלא קיימת במערכות תפעוליות: הבנה רציפה של הקשר ובניית תמונת מצב חיה שמחברת בין אירועים.", 
+    icon: Target,
+    id: "CATEGORY_CREATION"
   },
   { 
-      title: "חוסן טכנולוגי ו-IP", 
-      text: "הפטנטים שלנו סביב ה-Context Matching והצבירה של 'נרטיבים חקירתיים' מאומתים יוצרים יתרון טכנולוגי ורשתי (Network Effect) חזק.", 
-      icon: Network, 
-      id: "DEFENSIBILITY" 
+    title: "חוסן טכנולוגי",
+    text: "המנוע של TEVEL יודע לפרש מגוון רחב של נתונים ולבנות מהם מבנה משמעותי ועקבי, שמאפשר התמצאות מהירה והבנה אמינה.", 
+    icon: Network,
+    id: "DEFENSIBILITY"
   },
   { 
-      title: "בידול מול המתחרים", 
-      text: "בעוד Palantir מצריכה מודלינג ידני ו-Splunk היא כלי ויזואליזציה, TEVEL מספקת את השכבה הקוגניטיבית החסרה ומאפשרת ערך מודיעיני מיידי.", 
-      icon: ShieldCheck, 
-      id: "COMPETITIVE_EDGE" 
+    title: "בידול מהותי בשוק",
+    text: "TEVEL הופכת מידע מפוזר לסיפור ברור ומעודכן, שמבליט תובנות ודפוסים מתפתחים ומאפשר תגובה מדויקת בזמן אמת.", 
+    icon: ShieldCheck,
+    id: "COMPETITIVE_EDGE"
   },
   { 
-      title: "גודל שוק והזדמנות", 
-      text: "שוק קריטי לתשתיות, ביטחון וחקירות, המוערך במיליארדים, שאינו מקבל מענה אפקטיבי לבעיית ההקשר ע\"י מוצרים קיימים.", 
-      icon: TrendingUp, 
-      id: "MARKET_OPPORTUNITY" 
+    title: "שוק רחב והזדמנות",
+    text: "ארגוני תשתית, ביטחון, אנרגיה וחקירה זקוקים ליכולת להבין קשר בין אירועים. TEVEL נותנת מענה ישיר לצורך הולך וגדל זה.", 
+    icon: TrendingUp,
+    id: "MARKET_OPPORTUNITY"
   }
 ];
+
 
 const ValueProp: React.FC = () => {
   return (
