@@ -156,7 +156,7 @@ const Hero: React.FC = () => {
           >
              <div className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm">
                 <span className="text-lg md:text-2xl text-slate-300 font-light text-center">
-                    הצעת <span className="text-white font-bold mx-1 border-b-2 border-tevel-green/50">Design Partnership</span> להפוך את עומס הנתונים למודיעין מבצעי.
+                    הצעת <span className="text-white font-bold mx-1 border-b-2 border-tevel-green/50">Design Partnership</span> להפוך את עומס הנתונים למידע ממקוד ויעיל.
                 </span>
              </div>
           </motion.div>
