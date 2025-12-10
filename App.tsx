@@ -1,3 +1,5 @@
+
+// Static Application - No API Key Required
 import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -57,8 +59,8 @@ export default function App() {
                 style={{ 
                     top: `${spark.top}%`, 
                     left: `${spark.left}%`,
-                    transform: `translate(-50%, -50%) rotate(${spark.rotation}deg)`
-                }}
+                    '--rot': `${spark.rotation}deg`
+                } as React.CSSProperties}
             >
                {/* SVG Lightning Bolt */}
                <svg width={spark.size} height={spark.size} viewBox="0 0 100 100" fill="none" stroke="rgba(0, 207, 149, 0.4)" strokeWidth="2" strokeLinecap="round" style={{ filter: 'drop-shadow(0 0 8px #00CF95)' }}>

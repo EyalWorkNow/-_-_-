@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, History, GitPullRequest, Filter, Search, Layers, Activity, Database, Check } from 'lucide-react';
+import { Brain, History, GitPullRequest, Filter, Search, Layers, Activity, Zap, Radio } from 'lucide-react';
 
 const Solution: React.FC = () => {
   return (
@@ -41,9 +42,10 @@ const Solution: React.FC = () => {
              viewport={{ once: true }}
              className="inline-block mb-4"
           >
-             <div className="flex items-center gap-2 justify-center text-tevel-green font-bold tracking-widest uppercase text-xs border border-tevel-green/30 bg-tevel-green/5 px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(0,207,149,0.15)]">
+             <div className="flex items-center gap-2 justify-center text-tevel-green font-bold tracking-widest uppercase text-xs border border-tevel-green/30 bg-tevel-green/5 px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(0,207,149,0.15)] group cursor-default">
                 <div className="w-2 h-2 bg-tevel-green rounded-full animate-pulse"></div>
-                <span>COGNITIVE LAYER // ACTIVE</span>
+                <span>SMART INTEGRATION LAYER // ACTIVE</span>
+                <Radio size={12} className="text-tevel-green group-hover:animate-ping opacity-70" />
              </div>
           </motion.div>
           <motion.h2 
@@ -59,9 +61,9 @@ const Solution: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl md:text-2xl text-slate-300 font-light max-w-2xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-slate-300 font-light max-w-3xl mx-auto leading-relaxed"
           >
-            מנוע הקשר <span className="text-tevel-electric font-mono text-sm align-top mx-1 font-bold">(CONTEXT ENGINE)</span> שמחבר את כל המערכות לרשת חכמה אחת.
+            לא עוד מערכת נפרדת, אלא <span className="text-white font-medium">שכבת אינטגרציה</span> שיושבת מעל ה-SCADA והמערכות הקיימות, ומספקת הבנה והקשר למידע הקיים.
           </motion.p>
         </div>
 
@@ -75,11 +77,14 @@ const Solution: React.FC = () => {
             viewport={{ once: true }}
             className="md:col-span-6 lg:col-span-8 row-span-2 bg-[#0C0F14] rounded-3xl border border-white/5 relative overflow-hidden group transition-all duration-500 hover:border-tevel-green/20 hover:shadow-[0_0_50px_rgba(0,207,149,0.1)] flex flex-col"
           >
+            {/* Hover Laser Scan Effect */}
+            <div className="absolute top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-tevel-green to-transparent opacity-0 group-hover:opacity-50 group-hover:animate-scan-fast pointer-events-none z-20"></div>
+
             {/* Header Bar */}
-            <div className="w-full h-10 border-b border-white/5 bg-[#05070A]/50 flex items-center justify-between px-6 backdrop-blur-sm">
+            <div className="w-full h-10 border-b border-white/5 bg-[#05070A]/50 flex items-center justify-between px-6 backdrop-blur-sm z-10">
                 <span className="text-[10px] text-tevel-green font-mono uppercase tracking-widest flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-tevel-green rounded-full animate-pulse"></span>
-                    CORE_SYSTEM.EXE
+                    TEVEL_CORE_ENGINE_V2.EXE
                 </span>
                 <div className="flex gap-1 opacity-30">
                     <div className="w-1 h-1 bg-white rounded-full"></div>
@@ -97,25 +102,25 @@ const Solution: React.FC = () => {
                 </div>
                 
                 <div className="relative">
-                    <div className="w-14 h-14 bg-[#0B0D11] border border-tevel-green/30 rounded-2xl flex items-center justify-center text-tevel-green mb-6 shadow-[0_0_20px_rgba(0,207,149,0.1)] group-hover:shadow-[0_0_30px_rgba(0,207,149,0.2)] transition-shadow">
+                    <div className="w-14 h-14 bg-[#0B0D11] border border-tevel-green/30 rounded-2xl flex items-center justify-center text-tevel-green mb-6 shadow-[0_0_20px_rgba(0,207,149,0.1)] group-hover:shadow-[0_0_30px_rgba(0,207,149,0.2)] transition-shadow group-hover:scale-110 duration-300">
                         <GitPullRequest size={28} />
                     </div>
-                    <h3 className="text-3xl font-bold text-white mb-4">איחוד נתונים אוטומטי</h3>
+                    <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-tevel-green transition-colors">היתוך מידע</h3>
                     <p className="text-slate-400 text-lg max-w-lg leading-relaxed">
-                        TEVEL יושבת מעל המערכות הקיימות. האלגוריתם מתחבר לכל המקורות (SCADA, לוגים, דיווחים) ומייצר תמונת אירוע קוהרנטית אחת בזמן אמת.
+                        המערכת מתחברת לקריאות SCADA בזמן אמת, אך מצליבה אותן גם עם יומני אירועים, היסטוריית תקלות ונתוני מזג אוויר. התוצאה היא שכל נתון בודד מקבל הקשר מלא.
                     </p>
                 </div>
                 
                 {/* Data Flow Visualization */}
                 <div className="mt-10">
                     <div className="flex items-center gap-2 text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-3">
-                        <Activity size={12} className="text-tevel-green" />
+                        <Activity size={12} className="text-tevel-green animate-pulse" />
                         Active Data Streams
                     </div>
                     <div className="flex flex-wrap gap-2">
-                        {['SCADA_RT', 'CRM_DB', 'SYS_LOGS', 'IOT_SENSORS', 'WEATHER_API'].map((tag, i) => (
-                            <span key={tag} className="px-3 py-1.5 bg-[#05070A] rounded border border-white/5 text-slate-300 font-mono text-[10px] flex items-center gap-2 hover:border-tevel-green/30 hover:text-tevel-green transition-colors cursor-default">
-                                <span className={`w-1 h-1 rounded-full ${i === 0 ? 'bg-tevel-green' : 'bg-slate-600'} animate-pulse`}></span>
+                        {['SCADA_RT', 'CRM_DB', 'SYS_LOGS', 'IOT_SENSORS', 'WEATHER_DATA'].map((tag, i) => (
+                            <span key={tag} className="px-3 py-1.5 bg-[#05070A] rounded border border-white/5 text-slate-300 font-mono text-[10px] flex items-center gap-2 hover:border-tevel-green/30 hover:text-tevel-green transition-colors cursor-default group/tag">
+                                <span className={`w-1 h-1 rounded-full ${i === 0 ? 'bg-tevel-green' : 'bg-slate-600'} group-hover/tag:bg-tevel-green group-hover/tag:animate-ping`}></span>
                                 {tag}
                             </span>
                         ))}
@@ -132,23 +137,24 @@ const Solution: React.FC = () => {
              transition={{ delay: 0.1 }}
              className="md:col-span-6 lg:col-span-4 bg-[#0C0F14] rounded-3xl border border-white/5 hover:border-blue-500/30 transition-colors group relative overflow-hidden flex flex-col"
           >
-              <div className="w-full h-8 border-b border-white/5 bg-[#05070A]/30 flex items-center px-4">
-                  <span className="text-[9px] text-blue-400 font-mono tracking-wider">MEMORY_BANK</span>
+              <div className="w-full h-8 border-b border-white/5 bg-[#05070A]/30 flex items-center px-4 justify-between">
+                  <span className="text-[9px] text-blue-400 font-mono tracking-wider">KNOWLEDGE_MGMT</span>
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></div>
               </div>
               <div className="p-8 flex-1">
                   <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-blue-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
-                  <div className="w-10 h-10 bg-[#0B0D11] rounded-lg flex items-center justify-center text-blue-400 mb-4 border border-white/5 shadow-lg">
+                  <div className="w-10 h-10 bg-[#0B0D11] rounded-lg flex items-center justify-center text-blue-400 mb-4 border border-white/5 shadow-lg group-hover:scale-110 transition-transform duration-300">
                       <History size={20} />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">זיכרון עבר</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">שימור ידע וזיכרון</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
-                      הפיכת מידע היסטורי לידע אקטיבי. המערכת זוכרת תקלות ודפוסים מהעבר ומחברת אותם לאירועים חדשים.
+                      כל אירוע שמתרחש נשמר לא רק כשורה בלוג, אלא כמקרה בוחן ללמידה. המערכת לומדת מפתרונות עבר ומציפה אותם כאשר אירוע דומה מתרחש שוב.
                   </p>
               </div>
           </motion.div>
 
-          {/* Module: Narrative */}
+          {/* Module: Context */}
           <motion.div 
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}
@@ -156,17 +162,18 @@ const Solution: React.FC = () => {
              transition={{ delay: 0.2 }}
              className="md:col-span-3 lg:col-span-4 bg-[#0C0F14] rounded-3xl border border-white/5 hover:border-purple-500/30 transition-colors group relative overflow-hidden flex flex-col"
           >
-               <div className="w-full h-8 border-b border-white/5 bg-[#05070A]/30 flex items-center px-4">
-                  <span className="text-[9px] text-purple-400 font-mono tracking-wider">NARRATIVE_BUILDER</span>
+               <div className="w-full h-8 border-b border-white/5 bg-[#05070A]/30 flex items-center px-4 justify-between">
+                  <span className="text-[9px] text-purple-400 font-mono tracking-wider">ROOT_CAUSE_ANALYSIS</span>
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse"></div>
               </div>
               <div className="p-8 flex-1">
                   <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-purple-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="w-10 h-10 bg-[#0B0D11] rounded-lg flex items-center justify-center text-purple-400 mb-4 border border-white/5 shadow-lg">
+                  <div className="w-10 h-10 bg-[#0B0D11] rounded-lg flex items-center justify-center text-purple-400 mb-4 border border-white/5 shadow-lg group-hover:scale-110 transition-transform duration-300">
                       <Layers size={20} />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">סיפור תפעולי</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">זיהוי דפוסים</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
-                      בניית נרטיב אוטומטי: מה קורה עכשיו, מה קרה בעבר, ומה הקשר ביניהם.
+                      יכולת לקשור בין תנאי סביבה כמו לחות ושעות עומס לבין התנהגות הרשת, כדי לזהות דפוסים נסתרים שתקלות רגילות מפספסות.
                   </p>
               </div>
           </motion.div>
@@ -179,17 +186,18 @@ const Solution: React.FC = () => {
              transition={{ delay: 0.3 }}
              className="md:col-span-3 lg:col-span-4 bg-[#0C0F14] rounded-3xl border border-white/5 hover:border-orange-500/30 transition-colors group relative overflow-hidden flex flex-col"
           >
-               <div className="w-full h-8 border-b border-white/5 bg-[#05070A]/30 flex items-center px-4">
-                  <span className="text-[9px] text-orange-400 font-mono tracking-wider">NOISE_FILTER</span>
+               <div className="w-full h-8 border-b border-white/5 bg-[#05070A]/30 flex items-center px-4 justify-between">
+                  <span className="text-[9px] text-orange-400 font-mono tracking-wider">PRIORITIZATION</span>
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse"></div>
               </div>
               <div className="p-8 flex-1">
                    <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                   <div className="w-10 h-10 bg-[#0B0D11] rounded-lg flex items-center justify-center text-orange-400 mb-4 border border-white/5 shadow-lg">
+                   <div className="w-10 h-10 bg-[#0B0D11] rounded-lg flex items-center justify-center text-orange-400 mb-4 border border-white/5 shadow-lg group-hover:scale-110 transition-transform duration-300">
                       <Filter size={20} />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">סינון רעשים</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
-                      מציגה לצוותים בדיוק מה חשוב — ומה סתם רעש. מנקה את הלוח לקבלת החלטות.
+                      במקום להציף את המוקד באלפי התראות, המערכת מקבצת אותן לאירועים בודדים. פחות רעש, יותר מיקוד בבעיה האמיתית.
                   </p>
               </div>
           </motion.div>
@@ -205,14 +213,14 @@ const Solution: React.FC = () => {
              <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
              
              <div className="relative z-10 flex items-center gap-6">
-                <div className="w-12 h-12 bg-[#0B0D11] rounded-xl flex items-center justify-center text-red-400 border border-white/5 shadow-lg">
+                <div className="w-12 h-12 bg-[#0B0D11] rounded-xl flex items-center justify-center text-red-400 border border-white/5 shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <Search size={24} />
                 </div>
                  <div>
                     <h3 className="text-xl font-bold text-white mb-1 flex items-center gap-3">
-                        סימון חוסרים <span className="text-[10px] font-mono text-red-400 bg-red-500/10 border border-red-500/20 px-2 py-0.5 rounded">BLIND_SPOTS</span>
+                        איתור חורים במידע <span className="text-[10px] font-mono text-red-400 bg-red-500/10 border border-red-500/20 px-2 py-0.5 rounded flex items-center gap-1"><Zap size={8} /> GAP_DETECTION</span>
                     </h3>
-                    <p className="text-slate-400 text-sm">המערכת יודעת להגיד: "מה עוד צריך לדעת כדי להשלים תמונת מצב."</p>
+                    <p className="text-slate-400 text-sm">המערכת יודעת להצביע לא רק על מה שיש, אלא גם על מה שחסר, כמו סנסור שלא משדר, כדי להשלים את תמונת המצב.</p>
                  </div>
              </div>
              

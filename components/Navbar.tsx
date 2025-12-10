@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Asterisk, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -18,8 +19,6 @@ const Navbar: React.FC = () => {
     e.preventDefault();
     const element = document.querySelector(id);
     if (element) {
-      // The CSS scroll-padding-top in index.html handles the offset, 
-      // but we can add extra logic here if needed.
       element.scrollIntoView({ behavior: 'smooth' });
       setMobileMenuOpen(false);
     }
@@ -59,7 +58,7 @@ const Navbar: React.FC = () => {
 
                 {/* Desktop Links - Inner Pill */}
                 <div className="hidden md:flex items-center gap-1 bg-black/20 rounded-full px-2 py-1 border border-white/5 backdrop-blur-md">
-                  {['האתגר', 'הפתרון', 'שימושים'].map((item, i) => {
+                  {['האתגר המערכתי', 'הטכנולוגיה', 'תרחישי אמת'].map((item, i) => {
                       const ids = ['#problem', '#solution', '#use-cases'];
                       return (
                           <a 
@@ -105,9 +104,9 @@ const Navbar: React.FC = () => {
                         className="absolute top-full left-0 right-0 mt-3 bg-[#0C0E12]/95 backdrop-blur-xl border border-white/10 rounded-3xl p-2 flex flex-col gap-1 shadow-2xl overflow-hidden z-40 mx-2"
                     >
                         <div className="p-4 space-y-2">
-                          <a href="#problem" onClick={(e) => scrollToSection(e, '#problem')} className="block px-4 py-3 text-center text-slate-300 hover:text-white hover:bg-white/5 rounded-2xl transition-colors border border-transparent hover:border-white/5">האתגר</a>
-                          <a href="#solution" onClick={(e) => scrollToSection(e, '#solution')} className="block px-4 py-3 text-center text-slate-300 hover:text-white hover:bg-white/5 rounded-2xl transition-colors border border-transparent hover:border-white/5">הפתרון</a>
-                          <a href="#use-cases" onClick={(e) => scrollToSection(e, '#use-cases')} className="block px-4 py-3 text-center text-slate-300 hover:text-white hover:bg-white/5 rounded-2xl transition-colors border border-transparent hover:border-white/5">שימושים</a>
+                          <a href="#problem" onClick={(e) => scrollToSection(e, '#problem')} className="block px-4 py-3 text-center text-slate-300 hover:text-white hover:bg-white/5 rounded-2xl transition-colors border border-transparent hover:border-white/5">האתגר המערכתי</a>
+                          <a href="#solution" onClick={(e) => scrollToSection(e, '#solution')} className="block px-4 py-3 text-center text-slate-300 hover:text-white hover:bg-white/5 rounded-2xl transition-colors border border-transparent hover:border-white/5">הטכנולוגיה</a>
+                          <a href="#use-cases" onClick={(e) => scrollToSection(e, '#use-cases')} className="block px-4 py-3 text-center text-slate-300 hover:text-white hover:bg-white/5 rounded-2xl transition-colors border border-transparent hover:border-white/5">תרחישי אמת</a>
                         </div>
                         <div className="p-2 bg-black/20 rounded-b-3xl">
                            <button 

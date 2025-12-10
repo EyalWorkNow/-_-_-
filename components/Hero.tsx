@@ -14,9 +14,6 @@ const Hero: React.FC = () => {
   const xSpring = useSpring(mouseX, { stiffness: 50, damping: 20 });
   const ySpring = useSpring(mouseY, { stiffness: 50, damping: 20 });
   
-  // HUD Data State
-  const [hudData, setHudData] = useState({ x: 0, y: 0, load: 0 });
-
   const handleMouseMove = (e: React.MouseEvent) => {
     const { clientX, clientY } = e;
     const { innerWidth, innerHeight } = window;
@@ -27,17 +24,10 @@ const Hero: React.FC = () => {
     
     mouseX.set(x * 20); // Tilt amount
     mouseY.set(y * 20);
-
-    // Update HUD data
-    setHudData({ 
-        x: Math.round(clientX), 
-        y: Math.round(clientY), 
-        load: Math.floor(Math.random() * 30) + 70 // Fake load 70-100%
-    });
   };
 
   const handleContact = () => {
-    window.location.href = "mailto:eyalatiyawork@gmail.com?subject=TEVEL%20POC%20Inquiry";
+    window.location.href = "mailto:eyalatiyawork@gmail.com?subject=TEVEL%20Strategic%20Partnership";
   };
 
   const scrollToLearnMore = () => {
@@ -60,25 +50,6 @@ const Hero: React.FC = () => {
         className="relative min-h-screen flex items-center justify-center pt-32 pb-12 overflow-hidden perspective-[1000px]"
     >
       
-      {/* Holographic HUD Cursor (Follows Mouse) */}
-      <motion.div 
-         className="fixed pointer-events-none z-50 hidden md:block"
-         animate={{ x: hudData.x + 20, y: hudData.y + 20 }}
-         transition={{ type: "tween", ease: "linear", duration: 0.1 }}
-      >
-          <div className="flex flex-col gap-1">
-              <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-tevel-green rounded-full animate-pulse"></div>
-                  <span className="font-mono text-[10px] text-tevel-green/80 tracking-widest">GRID_MONITOR</span>
-              </div>
-              <div className="bg-[#05070A]/80 border border-tevel-green/30 p-2 rounded-sm backdrop-blur-sm text-[9px] font-mono text-tevel-green/60 shadow-[0_0_10px_rgba(0,207,149,0.1)]">
-                  <div>POS_X: {hudData.x.toString().padStart(4, '0')}</div>
-                  <div>POS_Y: {hudData.y.toString().padStart(4, '0')}</div>
-                  <div>GRID_LOAD: {hudData.load}%</div>
-              </div>
-          </div>
-      </motion.div>
-
       {/* Dynamic 3D Background Layer */}
       <motion.div 
         style={{ rotateX, rotateY }}
@@ -111,7 +82,7 @@ const Hero: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-tevel-green opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-tevel-green shadow-[0_0_10px_#00CF95]"></span>
             </div>
-            <span className="text-xs font-mono font-bold tracking-widest text-tevel-green group-hover:animate-pulse">SYSTEM ONLINE</span>
+            <span className="text-xs font-mono font-bold tracking-widest text-tevel-green group-hover:animate-pulse">SYSTEM STATUS: DEVELOPMENT PHASE</span>
             <div className="w-px h-3 bg-white/10 mx-2"></div>
             <span className="text-xs font-mono text-slate-400">IEC PROPOSAL v2.0</span>
           </motion.div>
@@ -123,27 +94,24 @@ const Hero: React.FC = () => {
             className="flex flex-col items-center mb-8 relative select-none"
           >
             {/* TEVEL LOGO */}
-            <div className="relative mb-2">
+            <div className="relative mb-2 inline-block">
                  <span className="text-8xl md:text-9xl lg:text-[10rem] font-black text-white tracking-tighter drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] relative z-10">
                     TEVEL
                  </span>
-                 <div className="absolute -top-6 -right-8 text-tevel-green animate-pulse z-20 hidden md:block">
-                    <Zap size={64} fill="currentColor" className="drop-shadow-[0_0_15px_#00CF95]" />
-                 </div>
                  {/* Glitch Duplicates */}
                  <span className="absolute top-0 left-0 text-8xl md:text-9xl lg:text-[10rem] font-black text-tevel-green/20 tracking-tighter blur-[2px] animate-pulse pointer-events-none select-none">TEVEL</span>
             </div>
 
             {/* Sub Headline */}
-            <span className="text-3xl md:text-5xl lg:text-6xl font-light text-slate-400 tracking-wide mt-2 mb-4 font-sans">
-              המוח התפעולי שמייצר
+            <span className="text-3xl md:text-4xl lg:text-5xl font-light text-slate-400 tracking-wide mt-2 mb-4 font-sans">
+              שכבת ההקשר התפעולי
             </span>
 
-            {/* Main Hook - Living Memory */}
+            {/* Main Hook */}
             <div className="relative py-2 px-8">
                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-tevel-green/10 to-transparent blur-2xl rounded-full"></div>
-               <span className="relative block text-5xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-tevel-green via-white to-tevel-electric animate-flow pb-2 leading-tight" style={{ backgroundSize: '200% auto' }}>
-                 זיכרון ארגוני חי
+               <span className="relative block text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-tevel-green via-white to-tevel-electric animate-flow pb-2 leading-tight" style={{ backgroundSize: '200% auto' }}>
+                 לחבר את המידע לסיפור תפעולי אחד
                </span>
             </div>
           </motion.h1>
@@ -155,9 +123,12 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.6 }}
             className="mb-14"
           >
-             <div className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm">
-                <span className="text-lg md:text-2xl text-slate-300 font-light text-center">
-                    הצעת <span className="text-white font-bold mx-1 border-b-2 border-tevel-green/50">Design Partnership</span> להפוך את עומס הנתונים <br className="hidden md:block" /> לשליטה מלאה ורציפות תפעולית.
+             <div className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm max-w-4xl">
+                <span className="text-lg md:text-xl text-slate-300 font-light text-center leading-relaxed">
+                    אנחנו לא מבקשים להחליף את המערכות הקיימות, אלא לחבר ביניהן.
+                    <br/>
+                    TEVEL היא <span className="text-white font-bold">שכבת אינטגרציה</span> חכמה שקוראת נתונים ממקורות שונים כמו SCADA, CRM ויומני אירועים,
+                    מבינה את הקשר ביניהם ומציגה למפעיל תמונה ברורה שמסבירה מה קורה עכשיו ולמה.
                 </span>
              </div>
           </motion.div>
@@ -176,14 +147,14 @@ const Hero: React.FC = () => {
               <div className="absolute inset-0 bg-white/30 translate-x-[-100%] skew-x-12 group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></div>
               <span className="relative z-10 flex items-center gap-3">
                 <Zap className="w-5 h-5 fill-current" />
-                בואו נדבר על POC
+                תיאום שיחת אפיון
               </span>
             </button>
             <button 
                 onClick={scrollToLearnMore}
                 className="px-10 py-5 bg-transparent border border-white/10 text-white font-semibold text-lg rounded-full hover:bg-white/5 hover:border-tevel-electric/50 transition-all backdrop-blur-sm flex items-center gap-3 group active:scale-95"
             >
-              <span>למדו עוד</span>
+              <span>איך זה עובד?</span>
               <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform text-tevel-electric" />
             </button>
           </motion.div>

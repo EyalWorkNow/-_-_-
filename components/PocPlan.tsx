@@ -1,18 +1,19 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Crosshair, Database, FileText, ArrowLeftRight, Handshake, Zap, Power } from 'lucide-react';
 
 const steps = [
-  { icon: Crosshair, text: "בחירת תרחיש", sub: "תקלה חוזרת בקו X" },
-  { icon: Database, text: "חיבור דאטה", sub: "SCADA ולוגים" },
-  { icon: FileText, text: "בניית \"סיפור\"", sub: "ניתוח אוטומטי" },
-  { icon: ArrowLeftRight, text: "מדידת ערך", sub: "לפני / אחרי" },
-  { icon: Handshake, text: "Partnership", sub: "יציאה לדרך" }
+  { icon: Crosshair, text: "מיפוי צרכים והגדרת KPI", sub: "Needs Analysis & KPI" },
+  { icon: Database, text: "אינטגרציה וחיבור נתונים", sub: "Secure Data Integration" },
+  { icon: FileText, text: "עיבוד אלגוריתמי וזיהוי", sub: "Processing & Detection" },
+  { icon: ArrowLeftRight, text: "הצגת ערך תפעולי", sub: "Operational Value Demo" },
+  { icon: Handshake, text: "הטמעה ומפת דרכים", sub: "Deployment Roadmap" }
 ];
 
 const PocPlan: React.FC = () => {
   const handleContact = () => {
-    window.location.href = "mailto:eyalatiyawork@gmail.com?subject=TEVEL%20POC%20Partnership";
+    window.location.href = "mailto:eyalatiyawork@gmail.com?subject=TEVEL%20Implementation%20Roadmap";
   };
 
   return (
@@ -21,10 +22,10 @@ const PocPlan: React.FC = () => {
         <div className="text-center mb-24">
              <div className="inline-flex items-center gap-2 bg-tevel-green/5 text-tevel-green px-4 py-1.5 rounded-sm mb-6 border border-tevel-green/20">
                  <Power size={16} />
-                 <span className="font-mono text-sm font-bold tracking-widest uppercase">Initializing POC Protocol</span>
+                 <span className="font-mono text-sm font-bold tracking-widest uppercase">IMPLEMENTATION FRAMEWORK</span>
              </div>
-             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">POC קצר וממוקד</h2>
-             <p className="text-slate-400 text-xl">סגירת מעגל מהירה להוכחת ערך</p>
+             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">מתווה יישום והוכחת ערך</h2>
+             <p className="text-slate-400 text-xl max-w-2xl mx-auto">תהליך הנדסי מובנה לבחינת הטכנולוגיה בסביבת האמת של הרשת, תוך הגדרה מדויקת של מדדי הצלחה.</p>
         </div>
 
         {/* Timeline Visualization - Circuit Breakers */}
@@ -71,7 +72,7 @@ const PocPlan: React.FC = () => {
 
                         {/* Text */}
                         <h3 className="text-lg font-bold text-white mb-2 group-hover:text-tevel-green transition-colors">{step.text}</h3>
-                        <p className="text-slate-500 text-sm">{step.sub}</p>
+                        <p className="text-slate-500 text-sm font-mono">{step.sub}</p>
                     </motion.div>
                 ))}
             </div>
@@ -86,16 +87,16 @@ const PocPlan: React.FC = () => {
              {/* Background glow on hover */}
              <div className="absolute inset-0 bg-tevel-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
              
-             <h3 className="text-2xl font-bold text-white mb-8 relative z-10">מוכנים לחבר את הרשת?</h3>
+             <h3 className="text-2xl font-bold text-white mb-8 relative z-10">מוכנים להוביל את מהפכת הרשת החכמה?</h3>
              
              <button 
                 onClick={handleContact}
                 className="relative z-10 bg-tevel-green text-tevel-base font-bold text-xl py-5 px-16 rounded-sm hover:bg-emerald-400 shadow-[0_0_30px_rgba(0,207,149,0.3)] hover:shadow-[0_0_60px_rgba(0,207,149,0.6)] transition-all transform hover:-translate-y-1 flex items-center gap-3 mx-auto group-hover:scale-105 duration-300"
              >
                 <Zap className="fill-current animate-pulse" />
-                בואו נצא לדרך
+                תיאום פגישת אפיון ראשונית
              </button>
-             <p className="mt-6 text-slate-500 text-sm relative z-10 font-mono">NO_RISK_ASSESSMENT // TIME_BOUND_POC</p>
+             <p className="mt-6 text-slate-500 text-sm relative z-10 font-mono">INITIATE_STRATEGIC_COLLABORATION</p>
         </motion.div>
       </div>
     </section>

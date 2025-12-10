@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TEVEL - Cognitive OS</title>
     
-    <!-- Fonts: Rubik for modern Hebrew typography -->
+    <!-- Fonts: Heebo for modern Hebrew typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,7 +18,7 @@
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Rubik', 'sans-serif'],
+              sans: ['Heebo', 'sans-serif'],
               mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
             },
             colors: {
@@ -47,6 +47,7 @@
               'scanline': 'scanline 4s linear infinite',
               'spin-slow': 'spin 60s linear infinite',
               'spin-reverse-slow': 'spin 90s linear infinite reverse',
+              'scan-fast': 'scan-fast 2s linear infinite',
             },
             keyframes: {
               flow: {
@@ -73,13 +74,17 @@
                 },
               },
               'spark-flash': {
-                '0%': { opacity: 0, transform: 'scale(0.8) rotate(var(--rot))' },
+                '0%': { opacity: 0, transform: 'translate(-50%, -50%) scale(0.8) rotate(var(--rot))' },
                 '20%': { opacity: 1 },
-                '100%': { opacity: 0, transform: 'scale(1.2) rotate(var(--rot))' },
+                '100%': { opacity: 0, transform: 'translate(-50%, -50%) scale(1.2) rotate(var(--rot))' },
               },
               scanline: {
                 '0%': { top: '0%' },
                 '100%': { top: '100%' },
+              },
+              'scan-fast': {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(200%)' },
               }
             },
             backgroundImage: {
@@ -126,16 +131,6 @@
           linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
           linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
       }
-      
-      /* HUD Cursor Effect */
-      .hud-cursor {
-        pointer-events: none;
-        position: fixed;
-        z-index: 9999;
-        mix-blend-mode: screen;
-        transition: opacity 0.3s ease;
-      }
-
     </style>
   <script type="importmap">
 {
