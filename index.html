@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEVEL - Cognitive OS</title>
+    
+    <!-- Fonts: Rubik for modern Hebrew typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Rubik', 'sans-serif'],
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+            },
+            colors: {
+              slate: {
+                850: '#151e32',
+                900: '#0f172a',
+                950: '#020617',
+              },
+              tevel: {
+                base: '#05070A', // Deepest black
+                card: '#0F1218',
+                green: '#00CF95', // Primary Teal
+                electric: '#3B82F6', // Electric Blue
+                voltage: '#FACC15', // High Voltage Yellow
+                danger: '#EF4444',
+                text: '#E2E8F0'
+              }
+            },
+            animation: {
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'flow': 'flow 3s linear infinite',
+              'zap': 'zap 2s ease-in-out infinite',
+              'glitch': 'glitch 1s linear infinite',
+              'flicker': 'flicker 3s linear infinite',
+              'spark-flash': 'spark-flash 0.5s ease-out forwards',
+              'scanline': 'scanline 4s linear infinite',
+              'spin-slow': 'spin 60s linear infinite',
+              'spin-reverse-slow': 'spin 90s linear infinite reverse',
+            },
+            keyframes: {
+              flow: {
+                '0%': { backgroundPosition: '0% 50%' },
+                '100%': { backgroundPosition: '100% 50%' },
+              },
+              zap: {
+                '0%, 100%': { opacity: 1, filter: 'brightness(1)' },
+                '50%': { opacity: 0.7, filter: 'brightness(1.5)' },
+              },
+              glitch: {
+                '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
+                '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
+                '62%': { transform: 'translate(0,0) skew(5deg)' },
+              },
+              flicker: {
+                '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': {
+                  opacity: 0.99,
+                  filter: 'drop-shadow(0 0 1px rgba(255,255,255,0))',
+                },
+                '20%, 21.999%, 63%, 63.999%, 65%, 69.999%': {
+                  opacity: 0.4,
+                  filter: 'none',
+                },
+              },
+              'spark-flash': {
+                '0%': { opacity: 0, transform: 'scale(0.8) rotate(var(--rot))' },
+                '20%': { opacity: 1 },
+                '100%': { opacity: 0, transform: 'scale(1.2) rotate(var(--rot))' },
+              },
+              scanline: {
+                '0%': { top: '0%' },
+                '100%': { top: '100%' },
+              }
+            },
+            backgroundImage: {
+              'circuit-pattern': "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0)",
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      html {
+        scroll-padding-top: 100px; /* Offset for fixed navbar */
+      }
+      body {
+        background-color: #05070A;
+        color: #E2E8F0;
+        overflow-x: hidden;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0B0D11; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e293b; 
+        border-radius: 4px;
+        border: 1px solid #0B0D11;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #00CF95; 
+      }
+      
+      .glass-card {
+        background: rgba(15, 18, 24, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .grid-bg {
+        background-size: 50px 50px;
+        background-image: 
+          linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      }
+      
+      /* HUD Cursor Effect */
+      .hud-cursor {
+        pointer-events: none;
+        position: fixed;
+        z-index: 9999;
+        mix-blend-mode: screen;
+        transition: opacity 0.3s ease;
+      }
+
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.1/client",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.1",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
