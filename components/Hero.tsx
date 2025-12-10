@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
 import { ChevronDown, Zap, Activity, Cpu, Crosshair } from 'lucide-react';
@@ -68,12 +69,12 @@ const Hero: React.FC = () => {
           <div className="flex flex-col gap-1">
               <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-tevel-green rounded-full animate-pulse"></div>
-                  <span className="font-mono text-[10px] text-tevel-green/80 tracking-widest">TRK_Active</span>
+                  <span className="font-mono text-[10px] text-tevel-green/80 tracking-widest">GRID_MONITOR</span>
               </div>
               <div className="bg-[#05070A]/80 border border-tevel-green/30 p-2 rounded-sm backdrop-blur-sm text-[9px] font-mono text-tevel-green/60 shadow-[0_0_10px_rgba(0,207,149,0.1)]">
                   <div>POS_X: {hudData.x.toString().padStart(4, '0')}</div>
                   <div>POS_Y: {hudData.y.toString().padStart(4, '0')}</div>
-                  <div>SYS_LOAD: {hudData.load}%</div>
+                  <div>GRID_LOAD: {hudData.load}%</div>
               </div>
           </div>
       </motion.div>
@@ -156,7 +157,7 @@ const Hero: React.FC = () => {
           >
              <div className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm">
                 <span className="text-lg md:text-2xl text-slate-300 font-light text-center">
-                    הצעת <span className="text-white font-bold mx-1 border-b-2 border-tevel-green/50">Design Partnership</span> להפוך את עומס הנתונים למידע ממקוד ויעיל.
+                    הצעת <span className="text-white font-bold mx-1 border-b-2 border-tevel-green/50">Design Partnership</span> להפוך את עומס הנתונים <br className="hidden md:block" /> לשליטה מלאה ורציפות תפעולית.
                 </span>
              </div>
           </motion.div>
