@@ -1,7 +1,7 @@
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
-import { ChevronDown, Zap, Activity, Cpu, Crosshair } from 'lucide-react';
+import { ChevronDown, Zap } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
       >
         <div className="flex flex-col items-center text-center max-w-6xl mx-auto">
           
-          {/* Status Badge - Interactive */}
+          {/* Status Badge */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -83,8 +83,6 @@ const Hero: React.FC = () => {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-tevel-green shadow-[0_0_10px_#00CF95]"></span>
             </div>
             <span className="text-xs font-mono font-bold tracking-widest text-tevel-green group-hover:animate-pulse">SYSTEM STATUS: DEVELOPMENT PHASE</span>
-            <div className="w-px h-3 bg-white/10 mx-2"></div>
-            <span className="text-xs font-mono text-slate-400">IEC PROPOSAL v2.0</span>
           </motion.div>
 
           <motion.h1 
@@ -98,20 +96,19 @@ const Hero: React.FC = () => {
                  <span className="text-8xl md:text-9xl lg:text-[10rem] font-black text-white tracking-tighter drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] relative z-10">
                     TEVEL
                  </span>
-                 {/* Glitch Duplicates */}
                  <span className="absolute top-0 left-0 text-8xl md:text-9xl lg:text-[10rem] font-black text-tevel-green/20 tracking-tighter blur-[2px] animate-pulse pointer-events-none select-none">TEVEL</span>
             </div>
 
             {/* Sub Headline */}
-            <span className="text-3xl md:text-4xl lg:text-5xl font-light text-slate-400 tracking-wide mt-2 mb-4 font-sans">
-              שכבת ההקשר התפעולי
+            <span className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-400 tracking-wide mt-2 mb-4 font-sans max-w-5xl">
+              The Cognitive OS for Critical Intelligence
             </span>
 
             {/* Main Hook */}
             <div className="relative py-2 px-8">
                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-tevel-green/10 to-transparent blur-2xl rounded-full"></div>
-               <span className="relative block text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-tevel-green via-white to-tevel-electric animate-flow pb-2 leading-tight" style={{ backgroundSize: '200% auto' }}>
-                 לחבר את המידע לסיפור תפעולי אחד
+               <span className="relative block text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-tevel-green via-white to-tevel-electric animate-flow pb-2 leading-tight" style={{ backgroundSize: '200% auto' }}>
+                 שכבת המוח החסרה לאיחוד, הבנה והכוונה אוטומטית של נתונים תפעוליים
                </span>
             </div>
           </motion.h1>
@@ -123,12 +120,11 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.6 }}
             className="mb-14"
           >
-             <div className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm max-w-4xl">
+             <div className="inline-flex items-center gap-2 px-6 py-6 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm max-w-4xl shadow-xl">
                 <span className="text-lg md:text-xl text-slate-300 font-light text-center leading-relaxed">
-                    אנחנו לא מבקשים להחליף את המערכות הקיימות, אלא לחבר ביניהן.
+                    כחברה תפעולית, יש לכם ידע ארגוני עצום ופתרונות לבעיות מהעבר, אך הם הולכים לאיבוד בשוטף.
                     <br/>
-                    TEVEL היא <span className="text-white font-bold">שכבת אינטגרציה</span> חכמה שקוראת נתונים ממקורות שונים כמו SCADA, CRM ויומני אירועים,
-                    מבינה את הקשר ביניהם ומציגה למפעיל תמונה ברורה שמסבירה מה קורה עכשיו ולמה.
+                    TEVEL היא הפלטפורמה שמחברת בין העבר להווה, בונה תהליכים אוטומטיים ועוזרת לכם להבדיל בין רעש למידע קריטי. אנחנו מנהלים את השוטף כדי שאתם תוכלו להתמקד בפתרון.
                 </span>
              </div>
           </motion.div>
@@ -162,7 +158,7 @@ const Hero: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* "Reactor Core" Visualization - Now Interactive & 3D */}
+      {/* "Reactor Core" Visualization */}
       <motion.div 
         style={{ rotateX, rotateY }}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] pointer-events-none -z-10 transition-transform duration-75 ease-out"
@@ -170,7 +166,7 @@ const Hero: React.FC = () => {
          {/* Inner Glow */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-tevel-green/10 rounded-full blur-[80px]"></div>
          
-         {/* Rotating Rings (Orbits) with varying speeds and tilt */}
+         {/* Rotating Rings */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-white/10 rounded-full animate-spin-slow shadow-[0_0_50px_rgba(0,207,149,0.1)]">
              <div className="absolute -top-1 left-1/2 w-3 h-3 bg-tevel-green rounded-full shadow-[0_0_20px_#00CF95]"></div>
          </div>
@@ -197,9 +193,6 @@ const Hero: React.FC = () => {
                 animate={{ pathLength: 1, opacity: [0.1, 0.4, 0.1] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
              />
-             {/* Random connecting lines */}
-             <motion.line x1="600" y1="600" x2="800" y2="300" stroke="#00CF95" strokeWidth="1" strokeOpacity="0.2" />
-             <motion.line x1="600" y1="600" x2="400" y2="900" stroke="#00CF95" strokeWidth="1" strokeOpacity="0.2" />
          </svg>
       </motion.div>
     </section>

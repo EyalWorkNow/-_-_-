@@ -17,9 +17,8 @@ const Footer: React.FC = () => {
                 <span className="text-2xl font-bold tracking-wider font-sans text-white">TEVEL</span>
             </div>
             <div className="max-w-3xl text-slate-400 text-lg leading-relaxed">
-                <p className="font-semibold text-white mb-2">סיכום</p>
-                TEVEL היא פלטפורמת תוכנה המיועדת להפוך את ניהול רשת החשמל לחכם ומבוסס הקשר. 
-                אנחנו מחפשים שותפים לדרך שיעזרו לנו לעצב את המוצר כך שיתאים בדיוק לאתגרים של רשת החשמל הלאומית.
+                <p className="font-semibold text-white mb-2">Cognitive OS for Critical Intelligence</p>
+                TEVEL היא שכבת המוח החסרה לאיחוד, הבנה והכוונה אוטומטית של נתונים תפעוליים. אנחנו הופכים רעש דיגיטלי לזיכרון ארגוני חי ועוזרים לארגונים לנהל תהליכים ולחקור אירועים במהירות.
             </div>
         </div>
 

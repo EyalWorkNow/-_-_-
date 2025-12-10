@@ -7,12 +7,10 @@ const Problem: React.FC = () => {
   return (
     <section id="problem" className="py-32 relative bg-[#05070A] overflow-hidden">
       
-      {/* Dynamic Background - Red Alert Mode */}
+      {/* Dynamic Background */}
       <div className="absolute inset-0 pointer-events-none">
          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-tevel-danger to-transparent opacity-50 shadow-[0_0_20px_#EF4444] animate-scanline"></div>
          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(239,68,68,0.03),transparent_70%)]"></div>
-         <div className="absolute top-1/2 left-0 w-full h-[1px] bg-tevel-danger/10"></div>
-         <div className="absolute left-1/2 top-0 h-full w-[1px] bg-tevel-danger/10"></div>
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -28,55 +26,53 @@ const Problem: React.FC = () => {
                 <div className="absolute inset-0 bg-tevel-danger/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></div>
                 <div className="w-2 h-2 rounded-full bg-tevel-danger animate-pulse"></div>
                 <BarChart3 size={14} className="animate-pulse" />
-                <span className="tracking-widest">GRID DIAGNOSTIC // INTEGRATION CHALLENGES</span>
+                <span className="tracking-widest">⚠️ משבר הדאטה</span>
             </motion.div>
 
-            <h2 className="text-5xl md:text-6xl font-black mb-6 text-white leading-tight tracking-tight">
-                אתגר האינטגרציה: <br className="md:hidden" />
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white leading-tight tracking-tight">
+                טובעים במידע, <br className="md:hidden" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-500 via-slate-200 to-slate-500 relative inline-block group">
-                  <span className="absolute inset-0 animate-glitch opacity-0 group-hover:opacity-100 text-tevel-danger mix-blend-overlay">נתק מערכתי</span>
-                  נתק מערכתי
+                  צמאים להקשר (Context Lag)
                   <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-tevel-danger/50 shadow-[0_0_10px_#EF4444]"></span>
                 </span>
             </h2>
             <p className="text-xl text-slate-400 max-w-4xl mx-auto font-light leading-relaxed">
-               מערכות הליבה מייצרות כמויות עצומות של נתונים, אך העדר סנכרון מלא ביניהן יוצר "איי מידע" ומקשה על גיבוש תמונת מצב אחודה בזמן אמת.
+               גופים המנהלים פעילות קריטית (תשתיות, אנרגיה, ביטחון) מוצפים בנתונים מרובי־מקור: לוגים, סנסורים, וידאו ודוחות. המערכות הקיימות מספקות התרעה ותצוגה, אך לא הבנה.
             </p>
         </div>
 
-        {/* Cards Grid - Deconstructed Dashboard Look */}
+        {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
            
-           {/* Card 1: Data Silos */}
+           {/* Card 1: Context Lag */}
            <ProblemCard 
               delay={0.1}
               icon={Database}
-              id="ERR_01"
-              title="ביזור מערכות מידע"
-              subtitle="Decentralization"
-              description="ריבוי פלטפורמות שונות כמו SCADA, לוגים ו-IoT שאינן מדברות בשפה אחידה, מה שמקשה על הצלבת נתונים מהירה וניתוח רוחבי."
-              stat="5+"
-              statLabel="מערכות נפרדות"
+              id="ERR_CONTEXT"
+              title="הצפת מידע ללא הקשר"
+              subtitle="Data Flood"
+              description="המערכות הקיימות (SCADA, Splunk) מצוינות באיסוף אך נכשלות בהבנה. המידע זורם, אך ההקשר מגיע מאוחר מדי."
+              stat="High"
+              statLabel="עומס נתונים"
               visual={
                 <div className="flex justify-between items-end h-12 w-full gap-1 mt-4 opacity-70 group-hover:opacity-100 transition-opacity">
-                    <div className="w-full bg-slate-700 h-[40%] rounded-sm group-hover:h-[60%] transition-all duration-300"></div>
-                    <div className="w-full bg-slate-700 h-[80%] rounded-sm group-hover:h-[50%] transition-all duration-300 delay-75"></div>
-                    <div className="w-full bg-tevel-danger h-[20%] rounded-sm animate-pulse group-hover:h-[90%] transition-all duration-300 delay-100"></div>
-                    <div className="w-full bg-slate-700 h-[60%] rounded-sm group-hover:h-[30%] transition-all duration-300 delay-150"></div>
+                    <div className="w-full bg-tevel-danger h-[90%] rounded-sm animate-pulse"></div>
+                    <div className="w-full bg-tevel-danger h-[70%] rounded-sm animate-pulse delay-75"></div>
+                    <div className="w-full bg-tevel-danger h-[100%] rounded-sm animate-pulse delay-150"></div>
                 </div>
               }
            />
 
-           {/* Card 2: Knowledge Erosion */}
+           {/* Card 2: The Cognitive Gap */}
            <ProblemCard 
               delay={0.2}
               icon={ZapOff}
-              id="ERR_02"
-              title="שחיקת ידע תפעולי"
-              subtitle="Knowledge Erosion"
-              description="תלות גבוהה בגורם האנושי ואיבוד תובנות קריטיות בין משמרות. הידע נשאר אצל המפעיל ולא הופך לחלק מהזיכרון הארגוני של המערכת."
-              stat="High"
-              statLabel="תלות בגורם אנושי"
+              id="ERR_COGNITION"
+              title="הפער הקוגניטיבי"
+              subtitle="No Narrative Intelligence"
+              description="אף מערכת אינה מסוגלת לבצע אינטליגנציה נרטיבית: לקבל פיסת מידע חדשה ולענות 'לאיזה סיפור זה שייך? האם זה סותר תיאוריה קיימת?'"
+              stat="Critical"
+              statLabel="חסר יכולת נרטיבית"
               visual={
                 <div className="flex flex-col gap-2 mt-4 w-full opacity-70 group-hover:opacity-100 transition-opacity">
                     <div className="h-1 w-full bg-slate-700 rounded-full"></div>
@@ -86,41 +82,39 @@ const Problem: React.FC = () => {
               }
            />
 
-           {/* Card 3: Cognitive Overload */}
+           {/* Card 3: Manual Waste */}
            <ProblemCard 
               delay={0.3}
               icon={AlertOctagon}
-              id="ERR_03"
-              title="עומס קוגניטיבי"
-              subtitle="Cognitive Overload"
-              description="הצפת המוקד באלפי התראות, שרבות מהן הן התראות סרק, מה שמקשה על המוקדנים לבודד את אירועי השורש ולטפל בבעיה האמיתית."
-              stat="CRITICAL"
-              statLabel="יחס אות לרעש"
+              id="ERR_MANUAL"
+              title="בזבוז זמן אנליסט"
+              subtitle="Manual Stitching"
+              description="חוקרים ואנליסטים מבלים 50%-80% מזמנם בחיבור ידני של נתונים סותרים ומפוזרים. עלות גבוהה של 'זמן אדם'."
+              stat="80%"
+              statLabel="זמן חיבור נתונים ידני"
               visual={
                  <div className="mt-4 flex items-center justify-center gap-1 w-full opacity-80">
-                    {[...Array(10)].map((_,i) => (
-                        <div key={i} className={`w-1 bg-tevel-danger rounded-sm animate-flicker`} style={{ height: Math.random() * 20 + 10 + 'px', animationDelay: Math.random() + 's' }}></div>
-                    ))}
+                    <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div className="h-full bg-tevel-danger w-[80%] animate-pulse"></div>
+                    </div>
                  </div>
               }
            />
 
-           {/* Card 4: Lack of Sync */}
+           {/* Card 4: Operational Risk */}
            <ProblemCard 
               delay={0.4}
               icon={Unplug}
-              id="ERR_04"
-              title="העדר תמונת מצב"
-              subtitle="Lack of Integrated View"
-              description="קושי לחבר באופן לוגי ומהיר בין דיווחי שטח, נתוני SCADA וקריאות מוקד 103 לכדי אירוע מערכתי אחד ברור ופעיל."
-              stat="N/A"
-              statLabel="סנכרון חלקי"
+              id="ERR_RISK"
+              title="סיכון תפעולי גבוה"
+              subtitle="Slow Response"
+              description="פער ההקשר מוביל לחקירות איטיות וקבלת החלטות שגויה בזמן אמת. הארגון חשוף לסיכונים שהוא לא מודע אליהם."
+              stat="High"
+              statLabel="סיכון תפעולי"
               visual={
                 <div className="mt-4 w-full h-12 border border-dashed border-slate-600 rounded flex items-center justify-center group-hover:border-tevel-danger/50 transition-colors">
-                    <div className="relative">
-                        <XCircle className="text-tevel-danger animate-ping absolute opacity-50" size={16} />
-                        <XCircle className="text-tevel-danger relative" size={16} />
-                    </div>
+                    <XCircle className="text-tevel-danger animate-ping absolute opacity-50" size={16} />
+                    <XCircle className="text-tevel-danger relative" size={16} />
                 </div>
               }
            />

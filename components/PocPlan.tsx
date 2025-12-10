@@ -1,19 +1,19 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Crosshair, Database, FileText, ArrowLeftRight, Handshake, Zap, Power } from 'lucide-react';
+import { Crosshair, Database, FileText, ArrowLeftRight, Rocket, Zap, Power } from 'lucide-react';
 
 const steps = [
-  { icon: Crosshair, text: "מיפוי צרכים והגדרת KPI", sub: "Needs Analysis & KPI" },
-  { icon: Database, text: "אינטגרציה וחיבור נתונים", sub: "Secure Data Integration" },
-  { icon: FileText, text: "עיבוד אלגוריתמי וזיהוי", sub: "Processing & Detection" },
-  { icon: ArrowLeftRight, text: "הצגת ערך תפעולי", sub: "Operational Value Demo" },
-  { icon: Handshake, text: "הטמעה ומפת דרכים", sub: "Deployment Roadmap" }
+  { icon: Crosshair, text: "הגדרת אתגר RCA", sub: "Define Root Cause Analysis Challenge" },
+  { icon: Database, text: "אינטגרציית דאטה", sub: "Ingest Logs & History" },
+  { icon: FileText, text: "בניית נרטיב אוטומטית", sub: "Automated Narrative Building" },
+  { icon: ArrowLeftRight, text: "מדידת חיסכון", sub: "Cycle Time Reduction" },
+  { icon: Rocket, text: "הטמעה והרחבה", sub: "Scale to Production" }
 ];
 
 const PocPlan: React.FC = () => {
   const handleContact = () => {
-    window.location.href = "mailto:eyalatiyawork@gmail.com?subject=TEVEL%20Implementation%20Roadmap";
+    window.location.href = "mailto:eyalatiyawork@gmail.com?subject=TEVEL%20POC%20Inquiry";
   };
 
   return (
@@ -22,10 +22,12 @@ const PocPlan: React.FC = () => {
         <div className="text-center mb-24">
              <div className="inline-flex items-center gap-2 bg-tevel-green/5 text-tevel-green px-4 py-1.5 rounded-sm mb-6 border border-tevel-green/20">
                  <Power size={16} />
-                 <span className="font-mono text-sm font-bold tracking-widest uppercase">IMPLEMENTATION FRAMEWORK</span>
+                 <span className="font-mono text-sm font-bold tracking-widest uppercase">IMMEDIATE IMPACT</span>
              </div>
-             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">מתווה יישום והוכחת ערך</h2>
-             <p className="text-slate-400 text-xl max-w-2xl mx-auto">תהליך הנדסי מובנה לבחינת הטכנולוגיה בסביבת האמת של הרשת, תוך הגדרה מדויקת של מדדי הצלחה.</p>
+             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">פיילוט ליבה ממוקד (POC)</h2>
+             <p className="text-slate-400 text-xl max-w-2xl mx-auto">
+                 אנו מציעים POC מיידי וממוקד בתחום ניתוח שורש כשלים תפעוליים (Root Cause Analysis) או ניהול אנומליות ברשת. ה-POC ימדוד הפחתה ישירה בזמן מחזור החקירה ובסיכון התפעולי.
+             </p>
         </div>
 
         {/* Timeline Visualization - Circuit Breakers */}
@@ -87,16 +89,16 @@ const PocPlan: React.FC = () => {
              {/* Background glow on hover */}
              <div className="absolute inset-0 bg-tevel-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
              
-             <h3 className="text-2xl font-bold text-white mb-8 relative z-10">מוכנים להוביל את מהפכת הרשת החכמה?</h3>
+             <h3 className="text-2xl font-bold text-white mb-8 relative z-10">מוכנים להפוך דאטה גולמית למידע קונקרטי וממוקד ?</h3>
              
              <button 
                 onClick={handleContact}
                 className="relative z-10 bg-tevel-green text-tevel-base font-bold text-xl py-5 px-16 rounded-sm hover:bg-emerald-400 shadow-[0_0_30px_rgba(0,207,149,0.3)] hover:shadow-[0_0_60px_rgba(0,207,149,0.6)] transition-all transform hover:-translate-y-1 flex items-center gap-3 mx-auto group-hover:scale-105 duration-300"
              >
                 <Zap className="fill-current animate-pulse" />
-                תיאום פגישת אפיון ראשונית
+                בואו נדבר על POC
              </button>
-             <p className="mt-6 text-slate-500 text-sm relative z-10 font-mono">INITIATE_STRATEGIC_COLLABORATION</p>
+             <p className="mt-6 text-slate-500 text-sm relative z-10 font-mono">INITIATE_POC_SEQUENCE</p>
         </motion.div>
       </div>
     </section>

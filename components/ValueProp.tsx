@@ -1,32 +1,32 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Clock, Users, Rocket, Key, ArrowLeft, ShieldCheck, Target, TrendingUp, Settings, PenTool, Handshake } from 'lucide-react';
+import { Target, Users, Network, ShieldCheck, ArrowLeft, TrendingUp } from 'lucide-react';
 
 const values = [
   { 
-      title: "לא מוצר מדף, אלא פתרון תפור", 
-      text: "מוצרי AI גנריים מתקשים להבין את המבנה הייחודי של הרשת הישראלית. אנחנו בונים את הלוגיקה והאלגוריתמיקה סביב הצרכים והמערכות שלכם.", 
-      icon: Settings, 
-      id: "CUSTOM_FIT" 
+      title: "יצירת קטגוריה חדשה", 
+      text: "TEVEL ממלאת ואקום קריטי בשוק המודיעין המבצעי והחקירתי, ויוצרת למעשה קטגוריית מוצר חדשה שמשלימה את הכלים הקיימים בשכבה הקוגניטיבית.", 
+      icon: Target, 
+      id: "CATEGORY_CREATION" 
   },
   { 
-      title: "השפעה על מפת הדרכים", 
-      text: "במסגרת השותפות, אתם קובעים אילו בעיות נפתור קודם. במקום לקבל פיצ'רים שלא צריך, אתם מכוונים אותנו לכאבים האמיתיים כמו ניהול סופות או תקלות חוזרות.", 
-      icon: PenTool, 
-      id: "ROADMAP_INFLUENCE" 
+      title: "חוסן טכנולוגי ו-IP", 
+      text: "הפטנטים שלנו סביב ה-Context Matching והצבירה של 'נרטיבים חקירתיים' מאומתים יוצרים יתרון טכנולוגי ורשתי (Network Effect) חזק.", 
+      icon: Network, 
+      id: "DEFENSIBILITY" 
   },
   { 
-      title: "שימור ידע שמותאם לנהלים שלכם", 
-      text: "המערכת לומדת לא רק את הנתונים אלא את תורת ההפעלה שלכם. המטרה היא לייצר זיכרון ארגוני שמדבר בשפה של חברת החשמל.", 
+      title: "בידול מול המתחרים", 
+      text: "בעוד Palantir מצריכה מודלינג ידני ו-Splunk היא כלי ויזואליזציה, TEVEL מספקת את השכבה הקוגניטיבית החסרה ומאפשרת ערך מודיעיני מיידי.", 
       icon: ShieldCheck, 
-      id: "KNOWLEDGE_RETENTION" 
+      id: "COMPETITIVE_EDGE" 
   },
   { 
-      title: "ללא סיכון למערכות הליבה", 
-      text: "אנחנו מבינים את הרגישות של רשת קריטית. TEVEL עובדת כשכבת קריאה בלבד וממליצה על פעולות, ללא התערבות ישירה במערכות ה-SCADA.", 
-      icon: ShieldCheck, 
-      id: "ZERO_RISK" 
+      title: "גודל שוק והזדמנות", 
+      text: "שוק קריטי לתשתיות, ביטחון וחקירות, המוערך במיליארדים, שאינו מקבל מענה אפקטיבי לבעיית ההקשר ע\"י מוצרים קיימים.", 
+      icon: TrendingUp, 
+      id: "MARKET_OPPORTUNITY" 
   }
 ];
 
@@ -46,22 +46,20 @@ const ValueProp: React.FC = () => {
             className="lg:w-5/12 text-right"
           >
             <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-slate-400">
-               <Handshake size={12} className="text-tevel-green" />
-               COLLABORATION MODEL
+               <Users size={12} className="text-tevel-green" />
+               STRATEGIC CALL TO ACTION
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
-              למה אנחנו מבקשים <br/>
+              שותפות אסטרטגית <br/>
               <span className="text-tevel-green relative inline-block">
-                Design Partnership?
+                והשקעה בחדשנות
               </span>
             </h2>
             <p className="text-slate-300 text-lg mb-6 leading-relaxed font-light">
-              אנחנו יודעים לבנות טכנולוגיה, אבל אתם המומחים בניהול הרשת.
+               TEVEL מחפשת שותפים אסטרטגיים כדי להטמיע את הטכנולוגיה בסביבה תפעולית קריטית ולהבטיח יתרון תחרותי.
             </p>
             <p className="text-slate-300 text-lg mb-10 leading-relaxed font-light">
-              המוצר נמצא כרגע בשלבי פיתוח מתקדמים. זוהי לא מכירה של תוכנה סגורה, אלא הזמנה לתהליך פיתוח משותף. 
-              המטרה שלנו היא לא לנחש מה אתם צריכים, אלא לשבת עם המהנדסים והמוקדנים שלכם, להבין את צווארי הבקבוק, 
-              ולבנות את TEVEL כך שתהיה כלי עבודה מדויק עבורכם מהיום הראשון.
+              אנו מזמינים אתכם לבחון השקעה אסטרטגית שתבטיח לכם גישה בלעדית ראשונית לטכנולוגיית ה-Context Engine, הטמעה אקסקלוסיבית ומיצוב כמובילי חדשנות.
             </p>
             
             <div className="w-full h-80 bg-[#1a1d24] border border-white/5 rounded-3xl relative overflow-hidden flex items-center justify-center group hover:border-tevel-green/30 transition-all duration-500 shadow-2xl">
@@ -72,10 +70,10 @@ const ValueProp: React.FC = () => {
                  <div className="flex items-center gap-8 z-10">
                     <div className="flex flex-col items-center">
                          <div className="w-24 h-24 bg-[#151921] rounded-full flex items-center justify-center text-slate-200 text-2xl font-bold border border-white/10 shadow-lg z-10 relative group-hover:scale-110 transition-transform duration-500">
-                            IEC
+                            Partner
                             <div className="absolute inset-0 rounded-full border border-white/5 animate-[ping_3s_infinite]"></div>
                          </div>
-                         <div className="mt-4 text-[10px] tracking-[0.2em] text-slate-500 font-bold uppercase">Grid Expertise</div>
+                         <div className="mt-4 text-[10px] tracking-[0.2em] text-slate-500 font-bold uppercase">Enterprise</div>
                     </div>
                     
                     <div className="w-10 h-10 bg-tevel-green rounded-full flex items-center justify-center text-black font-bold animate-pulse shadow-[0_0_20px_#00CF95] z-20">
@@ -87,7 +85,7 @@ const ValueProp: React.FC = () => {
                             TEVEL
                             <div className="absolute inset-0 rounded-full border border-tevel-green/20 animate-[ping_3s_infinite_1.5s]"></div>
                          </div>
-                         <div className="mt-4 text-[10px] tracking-[0.2em] text-tevel-green font-bold uppercase">Tech Engine</div>
+                         <div className="mt-4 text-[10px] tracking-[0.2em] text-tevel-green font-bold uppercase">Cognitive OS</div>
                     </div>
                  </div>
             </div>
